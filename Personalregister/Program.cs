@@ -1,7 +1,14 @@
-﻿namespace Personalregister
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Personalregister
 {
     internal class Program
     {
+        class Person
+        {
+            public string Namn { get; set; } = string.Empty;
+            public int Lon { get; set; }
+        }
         static void Main(string[] args)
         {
             //Uppgift 1
@@ -16,15 +23,19 @@
             //Uppgift 3
             //Skriv programmet
 
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("Välkommen, kan du fylla i ditt namn: ");
+        
 
+            Console.WriteLine("Skriv ditt namn: ");
             string namn = Console.ReadLine();
             Console.WriteLine(namn);
-            Console.WriteLine("och din lön: ");
+            Console.WriteLine("Skriv din lön: ");
             string lon = Console.ReadLine();
 
-
+            Person person1 = new Person
+            {
+                Namn = namn,
+                Lon = Int32.Parse(lon)
+            };
 
             Console.WriteLine(lon, namn); 
         }
