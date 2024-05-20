@@ -23,21 +23,29 @@ namespace Personalregister
             //Uppgift 3
             //Skriv programmet
 
-        
-
-            Console.WriteLine("Skriv ditt namn: ");
-            string namn = Console.ReadLine();
-            Console.WriteLine(namn);
-            Console.WriteLine("Skriv din lön: ");
-            string lon = Console.ReadLine();
-
-            Person person1 = new Person
+            List<Person> personalregister = new List<Person>();
+            bool laggaTillNyPerson = true;
+            while (laggaTillNyPerson)
             {
-                Namn = namn,
-                Lon = Int32.Parse(lon)
-            };
+                Console.WriteLine("Skriv ditt namn: ");
+                string namn = Console.ReadLine();
+                Console.WriteLine(namn);
+                Console.WriteLine("Skriv din lön: ");
+                string lon = Console.ReadLine();
+                int antalAnstallda = personalregister.Count;
+                Console.WriteLine(antalAnstallda);
 
-            Console.WriteLine(lon, namn); 
+                Person person = new Person
+                {
+                    Namn = namn,
+                    Lon = Int32.Parse(lon)
+                };
+
+                personalregister.Add(person);
+
+                
+            }
+            
         }
     }
 }
